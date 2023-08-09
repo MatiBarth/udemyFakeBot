@@ -39,8 +39,10 @@ class ChatAdapter(private val context: Context) : ListAdapter<ChatMessages, Chat
         fun bind(chatMessages: ChatMessages) {
             val chatListMessage = binding.fbMessage
             if (chatMessages.isQuestion){
-                chatListMessage.gravity = Gravity.START
+                chatListMessage.gravity = Gravity.END
                 chatListMessage.setBackgroundColor(ContextCompat.getColor(context,R.color.purple_500))
+            }else {
+                chatListMessage.gravity = Gravity.START
             }
             chatListMessage.text = chatMessages.message
         //    binding.executePendingBindings()
